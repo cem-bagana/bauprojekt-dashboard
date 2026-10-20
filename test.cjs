@@ -1,0 +1,12 @@
+const assert=require('node:assert/strict');
+const {filtered,metrics,validItem,escapeHTML}=require('./app.js');
+const row={id:'1',project:'nord',kind:'Mangel',title:'Tür prüfen',owner:'Team Ausbau',due:'2026-10-19',status:'Offen',priority:'Hoch',note:''};
+const rows=[row,{...row,id:'2',status:'Erledigt'},{...row,id:'3',project:'hof',due:'2026-10-20',kind:'Aufgabe'}];
+assert.equal(filtered(rows,{project:'nord',status:'Offen',kind:'Mangel',search:'TÜR'}).length,1);
+assert.equal(filtered(rows,{search:'xyz'}).length,0);
+assert.deepEqual(metrics(rows,'2026-10-20'),{open:2,overdue:1,issues:1,progress:33});
+assert.deepEqual(metrics([],'2026-10-20'),{open:0,overdue:0,issues:0,progress:0});
+assert.equal(validItem(row),true);assert.equal(validItem({...row,project:'__proto__'}),false);
+assert.equal(validItem({...row,status:'unknown'}),false);
+assert.equal(escapeHTML('<img onerror="x">'), '&lt;img onerror=&quot;x&quot;&gt;');
+console.log('8 fachliche Prüfungen bestanden.');
