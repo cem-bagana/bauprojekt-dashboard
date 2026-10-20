@@ -10,3 +10,12 @@ assert.equal(validItem(row),true);assert.equal(validItem({...row,project:'__prot
 assert.equal(validItem({...row,status:'unknown'}),false);
 assert.equal(escapeHTML('<img onerror="x">'), '&lt;img onerror=&quot;x&quot;&gt;');
 console.log('8 fachliche Prüfungen bestanden.');
+const {toCSV}=require('./app.js');
+const csv=toCSV(filtered(rows,{project:'nord',status:'Offen'}));
+assert.ok(csv.startsWith('\uFEFF"Projekt";"Art";'));
+assert.equal(csv.split('\r\n').length,3);
+assert.ok(csv.includes('"Wohnhaus Nord";"Mangel";"Tür prüfen"'));
+assert.ok(toCSV([{...row,note:'Text; "Zitat"\nZeile 2'}]).includes('"Text; ""Zitat""\nZeile 2"'));
+for(const title of ['=1+1','+SUM(A1)','-1+1','@SUM(A1)','  =1+1','\t=1+1'])assert.ok(toCSV([{...row,title}]).includes('"\''+title+'"'));
+assert.equal(toCSV([]).split('\r\n').length,2);
+console.log('CSV-Prüfungen bestanden: Filter, Umlaute/BOM, Sonderzeichen, Formeltexte und leere Liste.');

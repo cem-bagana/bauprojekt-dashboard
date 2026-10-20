@@ -4,6 +4,12 @@ Ein interaktives Bauprojekt-Dashboard für das Portfolio von **Cem Bagana** – 
 
 [Demo öffnen](https://cem-bagana.github.io/bauprojekt-dashboard/) · [GitHub-Profil](https://github.com/cem-bagana) · [Portfolio](https://www.cembagana.de/)
 
+## Vorschau
+
+![Bauübersicht mit Projektfortschritt und Aufgaben](preview.png)
+
+*Demo mit fiktiven Beispieldaten.*
+
 ## Idee
 
 Aufgaben, Zuständigkeiten, Fälligkeiten und Mängel gehören im Baualltag zusammen. Diese kleine Demo zeigt, wie sich daraus eine verständliche Projektübersicht gestalten lässt. Sie ist ein neues Portfolio-Projekt und keine Referenz aus einem realen Kundenauftrag.
@@ -15,6 +21,10 @@ Aufgaben, Zuständigkeiten, Fälligkeiten und Mängel gehören im Baualltag zusa
 3. Einen Eintrag bearbeiten und auf „Erledigt“ setzen: Fortschritt, offene Mängel und Termine aktualisieren sich.
 4. Über „Neuer Eintrag“ eine Aufgabe oder einen Mangel mit Zuständigkeit und Termin ergänzen.
 5. „Demo zurücksetzen“ stellt nach Bestätigung die Beispieldaten wieder her.
+
+## Export für Excel
+
+„CSV für Excel“ lädt die aktuell sichtbaren Einträge herunter. Projekt, Status, Art und Suche werden berücksichtigt. Die Datei enthält alle acht fachlichen Spalten einschließlich Notizen, verwendet Semikolons und UTF-8 mit BOM für Umlaute. Bei leerer Trefferliste ist der Export deaktiviert. Formelähnliche Texte werden als Text abgesichert. Die CSV ist eine Momentaufnahme; ein Rückimport ist nicht vorgesehen.
 
 ## Funktionsumfang
 
