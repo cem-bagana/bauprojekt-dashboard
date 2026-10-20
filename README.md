@@ -2,7 +2,7 @@
 
 Ein interaktives Bauprojekt-Dashboard für das Portfolio von **Cem Bagana** – gemeinsam mit KI entwickelt, mit vollständig fiktiven Beispieldaten.
 
-[Demo öffnen](https://cembagana62-jpg.github.io/bauprojekt-dashboard/) · [GitHub-Profil](https://github.com/cembagana62-jpg) · [Portfolio](https://www.cembagana.de/)
+[Demo öffnen](https://cem-bagana.github.io/bauprojekt-dashboard/) · [GitHub-Profil](https://github.com/cem-bagana) · [Portfolio](https://www.cembagana.de/)
 
 ## Idee
 
